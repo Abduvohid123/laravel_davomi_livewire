@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('first',[\App\Http\Controllers\EloquentController::class,'first']);
+Route::get('find',[\App\Http\Controllers\EloquentController::class,'find']);
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

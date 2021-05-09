@@ -1,0 +1,6 @@
+1) livewire ni o'rnatish:
+composer require laravel/jetstream;
+php artisan jetstream:install livewire
+npm install && npm run
+php artisan migrate
+
