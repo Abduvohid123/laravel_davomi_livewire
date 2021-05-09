@@ -9,13 +9,13 @@ class EloquentController extends Controller
 {
     public function first()
     {
-        $user=User::where('id',1)->first();
+        $user=User::where('id',1)->get();
         return $user;
     }
 
     public function find()
     {
-        $user=User::find(1);
+        $user=User::where('id',1)->first();
         return $user;
     }
 }
