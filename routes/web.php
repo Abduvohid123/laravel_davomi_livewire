@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('first',[\App\Http\Controllers\EloquentController::class,'first']);
-Route::get('find',[\App\Http\Controllers\EloquentController::class,'find']);
+Route::get('insert', [\App\Http\Controllers\UserController::class,'insert']);
 
 
 
