@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('insert', [\App\Http\Controllers\UserController::class,'insert']);
+Route::get('find/{id}', [\App\Http\Controllers\UserController::class,'findPost']);
 
 
 

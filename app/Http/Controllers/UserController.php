@@ -20,4 +20,11 @@ class UserController extends Controller
         $user->post()->save($post);
         return "malumotlar saqlandi";
     }
+
+    public function  findPost($id)
+    {
+
+        $post=User::find($id)->post;
+        return $post;
+    }
 }
