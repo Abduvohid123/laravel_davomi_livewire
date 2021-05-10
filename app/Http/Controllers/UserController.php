@@ -23,7 +23,6 @@ class UserController extends Controller
 
     public function  findPost($id)
     {
-
         $post=User::find($id)->post;
         return $post;
     }
