@@ -12,8 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('insert', [\App\Http\Controllers\UserController::class,'insert']);
-Route::get('find/{id}', [\App\Http\Controllers\PostController::class,'getComments']);
+
+Route::get('addRole', [\App\Http\Controllers\RoleController::class,'addRole']);
+Route::get('getRoles/{id}', [\App\Http\Controllers\RoleController::class,'getAllRolesByUser']);
+Route::get('getUsers/{id}', [\App\Http\Controllers\RoleController::class,'getAllUsersByRole']);
+Route::get('addUser', [\App\Http\Controllers\RoleController::class,'addUser']);
 
 
 
