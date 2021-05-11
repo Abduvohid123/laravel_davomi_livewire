@@ -36,7 +36,7 @@ class RoleController extends Controller
     public function getAllRolesByUser($id){
 
         $user=User::find($id);
-        return ( $user->roles);
+        return  $user->roles;
     }
 
     public function getAllUsersByRole($id)

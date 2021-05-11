@@ -4,3 +4,8 @@ php artisan jetstream:install livewire
 npm install && npm run
 php artisan migrate
 
+
+2) excel ni o'rnatish
+composer require maatwebsite/excel
+php artisan make:export EmployeeExport --model=App\MOdels\Employee
+

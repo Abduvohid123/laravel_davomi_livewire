@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('addRole', [\App\Http\Controllers\RoleController::class,'addRole']);
-Route::get('getRoles/{id}', [\App\Http\Controllers\RoleController::class,'getAllRolesByUser']);
-Route::get('getUsers/{id}', [\App\Http\Controllers\RoleController::class,'getAllUsersByRole']);
-Route::get('addUser', [\App\Http\Controllers\RoleController::class,'addUser']);
+Route::get('add', [\App\Http\Controllers\EmployeeController::class,'addEmployee']);
+Route::get('excel', [\App\Http\Controllers\EmployeeController::class,'exportToExcel']);
+Route::get('csv', [\App\Http\Controllers\EmployeeController::class,'exportIntoCSV']);
+
 
 
 
