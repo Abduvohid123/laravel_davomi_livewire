@@ -40,4 +40,12 @@ class EmployeeController extends Controller
         return Excel::download(new EmployeeExport(),'employee.csv');
 
     }
+
+    public function import(Request $request)
+    {
+        if ($request->post()) {
+           Excel::import(new \App\Imports\EmployeeExport(),$request->file);
+        }
+        return view('pdf.import');
+    }
 }

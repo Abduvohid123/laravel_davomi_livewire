@@ -10,9 +10,12 @@ class Employee extends Model
 {
     use HasFactory;
 
+    protected $fillable=['name','email','phone','salary','department'];
     public static function getEmployeee()
     {
         $records=DB::table('employees')->select(['*'])->get()->toArray();
         return $records;
     }
+
+
 }

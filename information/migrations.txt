@@ -13,3 +13,5 @@ php artisan make:export EmployeeExport --model=App\Models\Employee
 composer require barryvdh/laravel-dompdf
 php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
 
+4) excel csv import
+php artisan make:import EmployeeExport --model=App\Models\Employee
