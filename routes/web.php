@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('import', [\App\Http\Controllers\EmployeeController::class,'import'])->name('import');
+Route::post('image', [\App\Http\Controllers\ImageController::class,'image'])->name('image');
+Route::get('image', [\App\Http\Controllers\ImageController::class,'image']);
 Route::get('import', [\App\Http\Controllers\EmployeeController::class,'import']);
+Route::post('import', [\App\Http\Controllers\EmployeeController::class,'import'])->name('import');
 Route::get('emp', [\App\Http\Controllers\EmployeeController::class,'employees']);
 Route::get('add', [\App\Http\Controllers\EmployeeController::class,'addEmployee']);
 Route::get('excel', [\App\Http\Controllers\EmployeeController::class,'exportToExcel']);

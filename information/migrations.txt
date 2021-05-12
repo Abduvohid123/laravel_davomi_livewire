@@ -15,3 +15,8 @@ php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
 
 4) excel csv import
 php artisan make:import EmployeeExport --model=App\Models\Employee
+
+5) image resize
+ composer require intervention/image
+ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
+
