@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('emp', [\App\Http\Controllers\EmployeeController::class,'employees']);
 Route::get('add', [\App\Http\Controllers\EmployeeController::class,'addEmployee']);
 Route::get('excel', [\App\Http\Controllers\EmployeeController::class,'exportToExcel']);
 Route::get('csv', [\App\Http\Controllers\EmployeeController::class,'exportIntoCSV']);

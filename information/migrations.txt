@@ -7,5 +7,9 @@ php artisan migrate
 
 2) excel ni o'rnatish
 composer require maatwebsite/excel
-php artisan make:export EmployeeExport --model=App\MOdels\Employee
+php artisan make:export EmployeeExport --model=App\Models\Employee
+
+3) pdf ni export qiliw
+composer require barryvdh/laravel-dompdf
+php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
 

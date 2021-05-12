@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Exports\EmployeeExport;
 use App\Models\Employee;
+
+use PDF;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
+    public function  employees() {
+        $employeees=Employee::all();
+        $pdf=PDF::loadView('pdf.pdf',compact('employeees'));
+        return $pdf->download('document.pdf');
+    }
     public function addEmployee()
     {
         $employee=[
