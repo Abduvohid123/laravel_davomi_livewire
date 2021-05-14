@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('editor', [\App\Http\Controllers\EditorController::class,'editor']);
+Route::get('add', [\App\Http\Controllers\StudentController::class,'addStudent']);
 
 
 

@@ -23,6 +23,7 @@
 
                 </div>
                 <div class="card-body">
+
                     <h1>TinyMCE Quick Start Guide</h1>
                     <form method="post">
                     <textarea id="mytextarea" name="mytextarea">
