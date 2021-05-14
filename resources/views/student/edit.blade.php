@@ -18,24 +18,25 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Image</h2>
-                    @if(\Illuminate\Support\Facades\Session::has('ok'))
+                    @if(\Illuminate\Support\Facades\Session::has('update'))
                     <div class="alert alert-success">
-                        {{\Illuminate\Support\Facades\Session::get('ok')}}
+                        {{\Illuminate\Support\Facades\Session::get('update')}}
                     </div>
                     @endif
 
                 </div>
                 <div class="card-body">
-                    <form action="add" method="post" enctype="multipart/form-data">
+                    <form action="{{route('update')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name">
+                            <input type="hidden" value="{{$student->id}}" name="id">
+                            <input type="text" name="name" id="name" value="{{$student->name}}">
                         </div>
                         <div class="form-group">
                             <label for="file">Choose Image</label>
                             <input type="file" name="file" id="file" class="form-control" onchange="preview(this )">
-                            <img    id="image" style="max-width: 130px; margin-top: 20px;">
+                            <img   src="{{asset('images')}}/{{$student->image}}"  id="image" style="max-width: 130px; margin-top: 20px;">
                         </div>
                         <button type="submit" class="btn btn-info">OK</button>
                     </form>
