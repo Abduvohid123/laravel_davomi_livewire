@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('drop', [\App\Http\Controllers\DropzoneController::class,'dropzone']);
+Route::get('gallery', [\App\Http\Controllers\GalleryController::class,'gallery']);
 Route::post('drop', [\App\Http\Controllers\DropzoneController::class,'dropzoneStore'])->name('dropzone');
+Route::get('drop', [\App\Http\Controllers\DropzoneController::class,'dropzone'])->name('dropzone');
 
 
 
