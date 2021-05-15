@@ -13,14 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('update', [\App\Http\Controllers\StudentController::class,'update'])->name('update');
-Route::get('edit/{id}', [\App\Http\Controllers\StudentController::class,'edit']);
-Route::get('delete/{id}', [\App\Http\Controllers\StudentController::class,'delete']);
-Route::get('add', [\App\Http\Controllers\StudentController::class,'addStudent']);
-Route::post('add', [\App\Http\Controllers\StudentController::class,'storeStudent']);
-Route::get('all', [\App\Http\Controllers\StudentController::class,'all_student']);
-
-
+Route::post('email', [\App\Http\Controllers\ContactController::class,'email'])->name('email');
+Route::get('contact', [\App\Http\Controllers\ContactController::class,'contact'])->name('update');
 
 
 
