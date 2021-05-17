@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('email', [\App\Http\Controllers\ContactController::class,'email'])->name('email');
-Route::get('contact', [\App\Http\Controllers\ContactController::class,'contact'])->name('update');
+Route::get('helper', [\App\Http\Controllers\EloquentController::class,'helper']);
 
 
 

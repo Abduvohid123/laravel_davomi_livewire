@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 class EloquentController extends Controller
 {
+    public function helper(){
+        return split_name('salom qalesan ');
+    }
+
     public function first()
     {
         $user=User::where('id',1)->get();//massiv qaytardi
