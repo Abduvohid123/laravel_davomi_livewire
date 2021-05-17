@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('helper', [\App\Http\Controllers\EloquentController::class,'helper']);
+Route::get('auto', [\App\Http\Controllers\ProductController::class,'autocomplete'])->name('autocomplete');
+Route::get('search', [\App\Http\Controllers\ProductController::class,'search']);
+Route::get('add', [\App\Http\Controllers\ProductController::class,'addProduct']);
 
 
 
