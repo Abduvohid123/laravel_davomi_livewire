@@ -26,5 +26,6 @@ php artisan vendor:publish --provider="Yajra\DataTables\DataTablesServiceProvide
 php artisan make:factory EmployeeFactory --model=Employee
 php artisan tinker
 Employee::factory()->count(100)->create()
-php artisan datatables:make Employee
+php artisan datatables:make Employee..
+
 
