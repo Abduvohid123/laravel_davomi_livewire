@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-zip": "*",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.4",
@@ -18,7 +19,7 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
         "maatwebsite/excel": "^3.1",
-      "ext-zip": "*"
+        "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

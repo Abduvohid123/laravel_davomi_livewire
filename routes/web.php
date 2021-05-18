@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('zip', [\App\Http\Controllers\ZipController::class,'zip_file']);
+Route::get('yajra', [\App\Http\Controllers\EmployeeController::class,'index']);
 
 
 

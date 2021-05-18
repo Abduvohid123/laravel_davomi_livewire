@@ -20,3 +20,11 @@ php artisan make:import EmployeeExport --model=App\Models\Employee
  composer require intervention/image
  php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 
+6) yajra datatable bilan ishlash
+composer require yajra/laravel-datatables
+php artisan vendor:publish --provider="Yajra\DataTables\DataTablesServiceProvider"
+php artisan make:factory EmployeeFactory --model=Employee
+php artisan tinker
+Employee::factory()->count(100)->create()
+php artisan datatables:make Employee
+

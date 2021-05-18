@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\EmployeeDataTable;
 use App\Exports\EmployeeExport;
 use App\Models\Employee;
 
@@ -11,6 +12,22 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
+    public function index (EmployeeDataTable $dataTable) {
+        return $dataTable->render('yajra.employee');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function  employees() {
         $employeees=Employee::all();
         $pdf=PDF::loadView('pdf.pdf',compact('employeees'));
