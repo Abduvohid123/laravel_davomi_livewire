@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('yajra', [\App\Http\Controllers\EmployeeController::class,'index'])->name('yajra');
+Route::get('ajax', [\App\Http\Controllers\Student2Controller::class,'index'])->name('yajra');
+Route::post('/add_student', [\App\Http\Controllers\Student2Controller::class,'addStudent'])->name('add_student');
 
 
 

@@ -13,6 +13,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class EmployeeController extends Controller
 {
     public function index (EmployeeDataTable $dataTable) {
+        $dataTable = EmployeeDataTable::latest()->get();
         return $dataTable->render('yajra.employee');
     }
 
