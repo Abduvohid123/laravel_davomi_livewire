@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('yajra', [\App\Http\Controllers\EmployeeController::class,'index']);
+Route::get('yajra', [\App\Http\Controllers\EmployeeController::class,'index'])->name('yajra');
 
 
 

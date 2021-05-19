@@ -11,6 +11,12 @@
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables.net-buttons-bs4/1.7.0/buttons.bootstrap4.js" integrity="sha512-a7nxEi23qoZ3Jd5emu13u4u9tS8V6+f56wWfImjwPwQxUN8Zp5n82s7O7PFVjBPKgW/SS0A4JGIot8HvNkIuMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{asset('/vendor/datatables/buttons.server-side.js')}}"></script>
+
 
 </head>
 <body>

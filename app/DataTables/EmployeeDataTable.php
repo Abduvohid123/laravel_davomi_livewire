@@ -47,15 +47,13 @@ class EmployeeDataTable extends DataTable
             ->setTableAttribute(['class' => 'table table-bordered table-striped table-hover'])
             ->columns($this->getColumns())
             ->minifiedAjax()
-            // ->dom('Bfrtip')
+            ->dom('Bfrtip')
             ->orderBy(1)
-           /* ->buttons(
-                Button::make('create'),
-                Button::make('export'),
-                Button::make('print'),
-                Button::make('reset'),
-                Button::make('reload')
-            )*/;
+            ->buttons(
+                Button::make('excel'),
+                Button::make('csv'),
+
+            );
     }
 
     /**
@@ -66,13 +64,14 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id', 'name', 'email', 'salary', 'department'
-            /* Column::computed('action')
+            'id', 'name', 'email', 'salary', 'department',
+
+             Column::computed('action')
                    ->exportable(false)
                    ->printable(false)
                    ->width(60)
                    ->addClass('text-center'),
-             Column::make('id'),
+            /* Column::make('id'),
              Column::make('add your columns'),
              Column::make('created_at'),
              Column::make('updated_at'),*/
