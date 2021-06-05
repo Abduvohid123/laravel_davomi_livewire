@@ -223,12 +223,12 @@
             },
             success: function (response) {
                 if (response) {
-                    $('#sid'+response.id+"td:nth-child(1)").text(response.firstname);
-                    $('#sid'+response.id+"td:nth-child(2)").text(response.lastname);
-                    $('#sid'+response.id+"td:nth-child(3)").text(response.email);
-                    $('#sid'+response.id+"td:nth-child(4)").text(response.phone);
+                    $('#sid'+response.id+"> td:nth-child(1)").text(response.firstname);
+                    $('#sid'+response.id+"> td:nth-child(2)").text(response.lastname);
+                    $('#sid'+response.id+"> td:nth-child(3)").text(response.email);
+                    $('#sid'+response.id+"> td:nth-child(4)").text(response.phone);
                     $('#studentEditForm')[0].reset();
-                    $('#studentEditModal').modal('toggle');
+                    $('#studentEditModal').modal('hide');
                 }
 
             }

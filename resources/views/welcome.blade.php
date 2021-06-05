@@ -1,7 +1,4 @@
 
-<?php
-return 1; exit();
-?>
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
