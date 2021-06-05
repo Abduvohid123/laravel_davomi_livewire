@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Student2Controller;
+use App\Http\Controllers\YajraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('ajax', [\App\Http\Controllers\Student2Controller::class,'index'])->name('yajra');
-Route::post('/add_student', [\App\Http\Controllers\Student2Controller::class,'addStudent'])->name('add_student');
+Route::get('ajax', [Student2Controller::class,'index'])->name('yajra');
+Route::post('/add_student', [Student2Controller::class,'addStudent'])->name('add_student');
+Route::get('/students/{id}', [Student2Controller::class,'getStudentById']);
+Route::put('updateStudent', [Student2Controller::class,'updateStudent'])->name('student.update');
 
 
 

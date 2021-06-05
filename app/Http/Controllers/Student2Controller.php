@@ -23,4 +23,21 @@ class Student2Controller extends Controller
         return response()->json($student);
     }
 
+    public function getStudentById($id)
+    {
+        $student=Student2::find($id);
+        response()->json($student);
+    }
+
+    public function updateStudent(Request $request)
+    {
+        $student=Student2::find($request->id);
+        $student->firstname=$request->firstname;
+        $student->lastname=$request->lastname;
+        $student->email=$request->email;
+        $student->phone=$request->phone;
+        $student->save();
+        return response()->json($student);
+    }
+
 }
