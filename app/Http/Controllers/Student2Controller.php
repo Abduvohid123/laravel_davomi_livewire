@@ -40,4 +40,18 @@ class Student2Controller extends Controller
         return response()->json($student);
     }
 
+    public function deleteStudent($id)
+    {
+        $student=Student2::find($id);
+        $student->delete();
+        return response()->json(['success'=>"malumot o'chirildi"]);
+    }
+
+    public function deleteCheckedStudents(Request $request)
+    {
+        $massiv=$request->massiv;
+        Student2::whereIn('id',$massiv)->delete();
+        return response()->json(['success'=>"Tanlangan malumotlar o'chirildi"]);
+    }
+
 }

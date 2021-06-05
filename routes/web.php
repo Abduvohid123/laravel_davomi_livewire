@@ -20,6 +20,8 @@ Route::post('/add_student', [Student2Controller::class,'addStudent'])->name('add
 Route::get('/students/{id}', [Student2Controller::class,'getStudentById']);
 Route::put('updateStudent', [Student2Controller::class,'updateStudent'])->name('student.update');
 
+Route::delete('deleteStudent/{id}',[Student2Controller::class,'deleteStudent']);
+Route::delete('deleteCheckedStudents',[Student2Controller::class,'deleteCheckedStudents'])->name('deleteCheckedStudents');
 
 
 Route::get('/', function () {

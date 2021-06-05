@@ -22,12 +22,15 @@
                     <h2>Barcha Studentlar</h2>
                     <a href="#" class="btn btn-primary" data-target="#studentModal"
                        data-toggle="modal" {{--href="/add"--}}>Yangi Student qo'shish</a>
+                    <a href="#" class="btn btn-danger" id="selected"> Tanlangan qatorlarni o'chirish
+                    </a>
 
                 </div>
                 <div class="card-body">
                     <table id="student_table" class="table table-bordered table-striped">
                         <thead>
                         <tr>
+                            <th><input type="checkbox" id="CheckAll"></th>
                             <th>LastName</th>
                             <th>FirstName</th>
                             <th>Email</th>
@@ -38,6 +41,7 @@
                         <tbody>
                         @foreach ($students as $item)
                             <tr id="sid{{$item->id}}">
+                                <td><input type="checkbox" name="ids" class="checkBoxClass" value="{{$item->id}}"></td>
                                 <td>
                                     {{$item->lastname}}
 
@@ -54,6 +58,9 @@
                                 <td>
                                     <a class="btn btn-info" href="javascript:void(0)" onclick="editStudent({{$item}})">
                                         Edit</a>
+                                    <a class="btn btn-danger" href="javascript:void(0)"
+                                       onclick="deleteStudent({{$item}})">
+                                        Delete</a>
                                 </td>
 
                             </tr>
@@ -168,13 +175,14 @@
                 _token: _token
             },
             success: function (response) {
+                window.location.reload()
                 if (response) {
                     let tr = "<tr>" +
                         "<td>" + response.firstname + "</td>" +
                         "<td>" + response.lastname + "</td>" +
                         "<td>" + response.email + "</td>" +
-                        "<td>" + response.phone + "</td>" +
-                        "</tr>";
+                        "<td>" + response.phone + "</td>";
+                    {{--"<td>" +'<a class="btn btn-info" href="javascript:void(0)" onclick="editStudent({{$item}})">Edit</a> <a class="btn btn-danger" href="javascript:void(0)"onclick="deleteStudent({{$item}})">Delete</a>' + "</td>" + "</tr>";--}}
                     $('#student_table tbody').prepend(tr);
                 }
                 $('#studentForm')[0].reset();
@@ -214,7 +222,7 @@
             url: "{{route('student.update')}}",
             type: "PUT",
             data: {
-                id:id,
+                id: id,
                 firstname: firstname,
                 lastname: lastname,
                 email: email,
@@ -223,15 +231,62 @@
             },
             success: function (response) {
                 if (response) {
-                    $('#sid'+response.id+"> td:nth-child(1)").text(response.firstname);
-                    $('#sid'+response.id+"> td:nth-child(2)").text(response.lastname);
-                    $('#sid'+response.id+"> td:nth-child(3)").text(response.email);
-                    $('#sid'+response.id+"> td:nth-child(4)").text(response.phone);
+                    $('#sid' + response.id + "> td:nth-child(1)").text(response.firstname);
+                    $('#sid' + response.id + "> td:nth-child(2)").text(response.lastname);
+                    $('#sid' + response.id + "> td:nth-child(3)").text(response.email);
+                    $('#sid' + response.id + "> td:nth-child(4)").text(response.phone);
                     $('#studentEditForm')[0].reset();
                     $('#studentEditModal').modal('hide');
                 }
 
             }
+        })
+    })
+</script>
+
+<script>
+    function deleteStudent(item) {
+        if (confirm('Do you  really delete this element')) {
+            $.ajax({
+                url: "/deleteStudent/" + item.id,
+                type: "DELETE",
+                data: {
+                    _token: $("input[name=_token]").val()
+                },
+                success: function (response) {
+                    $('#sid' + item.id).remove()
+                }
+            })
+        }
+
+    }
+</script>
+
+<script>
+    $(function (e) {
+        $('#CheckAll').click(function () {
+            $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+        });
+
+        $("#selected").click(function (e) {
+            e.preventDefault();
+            let massiv=[];
+            $("input:checkbox[name=ids]:checked").each(function () {
+                massiv.push($(this).val());
+            });
+            $.ajax({
+                url:"{{route('deleteCheckedStudents')}}",
+                type:"DELETE",
+                data:{
+                    _token: $("input[name=_token]").val(),
+                    massiv:massiv
+                },
+                success:function (){
+                    $.each(massiv,function (key,value) {
+                        $("#sid"+value).remove();
+                    })
+                }
+            })
         })
     })
 </script>
