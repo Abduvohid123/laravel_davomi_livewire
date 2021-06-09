@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('multiple', [\App\Http\Controllers\EloquentController::class, 'multiple_connection']);
 Route::get('scroll', [\App\Http\Controllers\ScrollPaginationController::class, 'index']);
 
 
