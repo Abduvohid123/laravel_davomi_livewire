@@ -37,6 +37,7 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach ($students as $item)
                             <tr>
                                 <td>{{$item->name}}</td>
